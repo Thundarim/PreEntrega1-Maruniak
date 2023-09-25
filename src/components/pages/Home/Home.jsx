@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './home.css';
 
+
 const Home = () => {
   const [productosDestacados] = useState([
     {

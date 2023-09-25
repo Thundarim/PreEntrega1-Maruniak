@@ -1,6 +1,6 @@
 import React from 'react'
-import { IoMdCart } from 'react-icons/io'
 import './navbar.css'
+import CartWidget from '../../common/cartWidget/cartWidget';
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -11,7 +11,7 @@ const Navbar = () => {
           <li><a href="">Camisas</a></li>
           <li><a href="">Zapatos</a></li>
           <li><a href="">En descuento</a></li>
-          <li><a href="">5<IoMdCart /></a></li>
+          <li><a href=""><CartWidget /></a></li>
         </ul>
       </h4>
     </div>
