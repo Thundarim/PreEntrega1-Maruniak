@@ -2,8 +2,8 @@
   background-color: var(--primary-color);
   color: rgba(116, 116, 116, 0.473);
   padding: 10px 20px;
-  border: 1px solid #FFB606; /* Remove single quotes around the border value */
-  border-radius: 5px; /* Remove single quotes around the border-radius value */
+  border: 1px solid #FFB606;
+  border-radius: 5px;
 }
 
 .navbar ul {
@@ -27,7 +27,6 @@
   border-bottom: 2px solid rgb(102, 150, 206);
 }
 
-/* Style the cart icon */
 .navbar li:last-child {
   display: flex;
   align-items: center;
