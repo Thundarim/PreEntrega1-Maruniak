@@ -1,1 +1,88 @@
-const {}
+/* variables de color */
+:root {
+    --color-primario: #FFB606; 
+    --color-secundario: #1c1c1c; 
+    --color-acento: #B76E79; 
+  }
+  
+  /* Estilo General  */
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(to left, black, #444441);
+    color: var(--color-primario);
+    
+  }
+  
+  /* Estilo del Header  */
+  header {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  /* Estilo de la Hero Section  */
+  .hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('path_to_hero_image.jpg');
+    background-size: cover;
+    color: #FFB606;
+  }
+  
+  /* Estilo de categorias-productos */
+  .categorias-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .categoria-tarj {
+    background-color: #3b3b3b;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .categoria-tarj img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .categoria-tarj h3 {
+    margin-top: 10px;
+    color: var(--color-primario);
+  }
+  
+  /* Estilo de productos destacados */
+  .productos-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .productos-destacado-tarj {
+    background-color: #3b3b3b;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .productos-destacado-tarj img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .productos-destacado-tarj h3 {
+    margin-top: 10px;
+    color: var(--color-primario);
+  }
