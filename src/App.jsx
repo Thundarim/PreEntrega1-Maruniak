@@ -9,8 +9,8 @@ function App() {
    return (
     <div>
       <Navbar />
-      <Home />
       <ItemListContainer nombre={"Roberto"} edad={22} verdad={true}/>
+      <Home />
     </div>
 )
 }
