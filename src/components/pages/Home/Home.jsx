@@ -11,7 +11,7 @@ const Home = () => {
     },
     {
       id: 2,
-      name: 'Vestido elegante mujer',
+      name: 'Vestido elegante mujer ',
       imageUrl: 'https://cdn.pixabay.com/photo/2022/11/09/10/52/woman-7580308_1280.png',
     },
     // Añadir mas productos si es necesario
