@@ -1,0 +1,34 @@
+.item-detail-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .item-detail-container img {
+    max-width: 40%;
+    max-height: 100%;
+    border-radius: 10px;
+  }
+  
+  .item-detail-container h3 {
+    margin-top: 10px;
+    color: var(--color-primario);
+  }
+  
+  .item-detail-container p {
+    color: var(--color-primario);
+  }
+  
+  .item-detail-container button {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .item-detail-container button:hover {
+    background-color: var(--color-secundario);
+  }
+  

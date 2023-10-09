@@ -1,12 +1,15 @@
+import React from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 
-const CartWidget = () => {
+const CartWidget = ({ cartCount }) => {
   return (
-    <div><Badge badgeContent={2} showzero color="primary">
-    <ShoppingCartIcon/>
-  </Badge></div>
-  )
+    <div>
+      <Badge badgeContent={cartCount} showZero={true} color="primary">
+        <ShoppingCartIcon />
+      </Badge>
+    </div>
+  );
 }
 
-export default CartWidget
+export default CartWidget;

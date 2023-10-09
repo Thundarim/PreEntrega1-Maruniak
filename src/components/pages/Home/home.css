@@ -61,28 +61,3 @@
     margin-top: 10px;
     color: var(--color-primario);
   }
-  
-  /* Estilo de productos destacados */
-  .productos-destacados {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .productos-destacado-tarj {
-    background-color: #3b3b3b;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .productos-destacado-tarj img {
-    max-width: 100%;
-    border-radius: 10px;
-  }
-  
-  .productos-destacado-tarj h3 {
-    margin-top: 10px;
-    color: var(--color-primario);
-  }

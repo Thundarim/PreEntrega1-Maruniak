@@ -1,0 +1,13 @@
+/* footer.css */
+
+.footer-container {
+    background-color: #1c1c1c94; 
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-texto {
+    color: #FFB606;
+    font-size: 16px;
+  }
+  

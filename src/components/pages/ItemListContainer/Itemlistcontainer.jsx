@@ -1,29 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { productos } from '../../productsMock';
+import './ItemListContainer.css';
+import ProductCard from '../../common/productCard/productCard';
 
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const { nombrecategoria } = useParams();
 
-const ItemListContainer = ({ nombre, edad, verdad }) => {
-  const estilo = {
-    padding: '20px',
-    border: '1px solid #FFB606',
-    borderRadius: '5px',
-    backgroundColor: '#1c1c1c',
-    textAlign: 'center',
-  };
+  useEffect(() => {
+    console.log('Categoria desde URL:', nombrecategoria);
 
-  const estilomensaje = {
-    fontSize: '24px', 
-    fontWeight: 'bold',
-    color: '#FFB606',
-  };
+    const filteredItems = nombrecategoria
+    ? productos.filter((product) => {
+        if (typeof product.categoria === 'string') {
+          return product.categoria.toLowerCase() === nombrecategoria.toLowerCase();
+        }
+        return false;
+      })
+    : productos;
+  
+    setItems(filteredItems);
+  }, [nombrecategoria]);
 
   return (
-    <div style={estilo}>
-      <div style={estilomensaje}>
-        <h4>Hola {nombre} Espero que tengas un buen dia </h4>
-        <h5>Mi edad es {edad}</h5>
-        <h3>Estas mirando esta pagina? :{verdad}</h3>
-        </div>
+    <div className="item-list-container">
+      <div className="item-grid">
+        {items.map((item) => (
+          <ProductCard key={item.id} product={item} />
+        ))}
+      </div>
     </div>
   );
 };
+
 export default ItemListContainer;
