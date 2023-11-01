@@ -9,7 +9,6 @@ const ItemListContainer = () => {
   const { nombrecategoria } = useParams();
 
   useEffect(() => {
-    console.log('Categoria desde URL:', nombrecategoria);
 
     const filteredItems = nombrecategoria
     ? productos.filter((product) => {
