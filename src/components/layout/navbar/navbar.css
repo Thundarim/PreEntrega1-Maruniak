@@ -33,11 +33,28 @@
   align-items: center;
 }
 
-.navbar li:last-child a {
+.navbar li {
   display: flex;
   align-items: center;
 }
 
-.navbar li:last-child a:hover {
+.navbar li  {
   text-decoration: none;
+}
+
+
+.categories {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.categories a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.categories a:hover {
+  text-decoration: underline;
 }
