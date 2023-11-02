@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Counter from './Counter';
+import Counter from './counter';
 import Swal from 'sweetalert2';
 
 
