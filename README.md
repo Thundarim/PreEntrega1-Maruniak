@@ -4,5 +4,5 @@
 - React
 - Firebase
 - Material UI
-
-![]/public
+- Javascript
+![](/public/vite.svg)
