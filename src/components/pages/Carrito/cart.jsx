@@ -8,7 +8,7 @@ import { Button } from '@mui/material';
 const Cart = () => {
   const { cart, deleteProductById, clearCart } = useContext(CartContext);
   const [totalPrice, setTotalPrice] = useState(0);
-  let exceedsStock = false; // Initialize it here
+  let exceedsStock = false;
 
   useEffect(() => {
     const calculatedTotalPrice = cart.reduce((total, item) => {
