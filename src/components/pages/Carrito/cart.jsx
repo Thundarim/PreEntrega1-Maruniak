@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../../../context/CartContext';
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
-import './Cart.css';
+import './cart.css';
 import { Button } from '@mui/material';
 
 const Cart = () => {
