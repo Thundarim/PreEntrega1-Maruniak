@@ -47,14 +47,19 @@
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .categories a {
   text-decoration: none;
   color: white;
   margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 .categories a:hover {
   text-decoration: underline;
+  display: flex;
+  align-items: center;
 }
