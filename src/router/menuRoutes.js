@@ -9,8 +9,8 @@ export const routes = [
         Element: ItemListContainer  ,
     },
     {
-        id: "category",
-        path: "/category/:categoryName",
+        id: "categoria",
+        path: "/categoria/:nombrecategoria",
         Element : ItemListContainer 
     },
     {

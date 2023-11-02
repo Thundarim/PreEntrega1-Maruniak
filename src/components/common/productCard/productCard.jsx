@@ -8,36 +8,36 @@ const Media = styled(CardMedia)`
   height: 300px;
 `;
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ producto }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = () => {
-    navigate(`/itemdetail/${product.id}`);
+    navigate(`/itemdetail/${producto.id}`);
   };
 
   return (
     <div className="product-card">
       <Media
         component="img"
-        alt={product.nombre}
+        alt={producto.nombre}
         height="200"
-        image={product.imageUrl}
-        title={product.nombre}
+        image={producto.imageUrl}
+        title={producto.nombre}
       />
       <CardContent>
         <Typography variant="h5" component="div">
-          {product.nombre}
+          {producto.nombre}
         </Typography>
         <Typography variant="body2" color="textSecondary">
-          Categoria: {product.categoria}
+          Categoría: {producto.categoria}
         </Typography>
         <Typography variant="body2" color="textPrimary">
-          Precio: ${product.precio}
+          Precio: ${producto.precio}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small" color="primary" onClick={handleViewDetails}>
-          Ver mas detalles
+          Ver más detalles
         </Button>
       </CardActions>
     </div>

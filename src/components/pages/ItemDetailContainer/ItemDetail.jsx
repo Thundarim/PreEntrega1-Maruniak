@@ -19,7 +19,6 @@ const ItemDetail = ({ item }) => {
     Swal.fire('Añadido al Carrito', `Añadido ${quantity} ${item.nombre}(s) a tu carrito.`, 'success');
   };
 
-  // Check if the item is already in the cart
   const itemInCart = totalQuantity > 0;
 
   return (
