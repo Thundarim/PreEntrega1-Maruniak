@@ -7,5 +7,3 @@
 - Firebase
 - Material UI
 - Javascript
-
-
