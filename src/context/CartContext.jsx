@@ -3,7 +3,6 @@ import React, { createContext, useState, useEffect } from 'react';
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-  // Initialize the quantity state with a default value of 1
   const [quantity, setQuantity] = useState(1);
 
   // Inicializa el estado del carrito desde localStorage
@@ -79,8 +78,8 @@ const CartContextProvider = ({ children }) => {
     deleteProductById,
     getTotalPrice,
     getTotalQuantity,
-    quantity, // Add the quantity to the context
-    setQuantity, // Add the function to update the quantity
+    quantity, 
+    setQuantity,
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
