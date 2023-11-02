@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Counter = ({ cantidad, incrementar, reducir }) => {
+const Counter = ({ quantity, incrementar, reducir }) => {
   return (
     <div>
-      <div>Cantidad: {cantidad}</div>
+      <div>Cantidad: {quantity}</div>
       <button onClick={incrementar}>Incrementar</button>
       <button onClick={reducir}>Reducir</button>
     </div>

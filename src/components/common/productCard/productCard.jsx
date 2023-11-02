@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardActions, CardMedia, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import './productcard.css';
+import './productCard.css';
 
 const Media = styled(CardMedia)`
   height: 300px;
@@ -29,10 +29,10 @@ const ProductCard = ({ product }) => {
           {product.nombre}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Category: {product.categoria}
+          Categoria: {product.categoria}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Price: ${product.precio}
+          Precio: ${product.precio}
         </Typography>
       </CardContent>
       <CardActions>
