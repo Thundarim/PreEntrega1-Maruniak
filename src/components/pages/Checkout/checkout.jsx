@@ -48,23 +48,25 @@ const Checkout = () => {
       .then((res) => {
         setOrderId(res.id);
   
-        cart.forEach((item) => {
-          const stock = parseFloat(item.stock);
-          const quantity = parseFloat(item.quantity);
-  
-          if (!isNaN(stock) && !isNaN(quantity)) {
-            const updatedStock = stock - quantity;
-            if (updatedStock >= 0) {
-              updateDoc(doc(db, "products", item.id), {
-                stock: updatedStock,
-              });
-            } else {
-              console.error("Not enough stock for item:", item);
-            }
-          } else {
-            console.error("Invalid stock or quantity data:", item);
-          }
-        });
+
+const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+cartItems.forEach((item) => {
+  const stock = parseFloat(item.stock);
+  const quantity = parseFloat(item.quantity);
+
+  if (!isNaN(stock) && !isNaN(quantity)) {
+    const updatedStock = stock - quantity;
+    if (updatedStock >= 0) {
+      updateDoc(doc(db, "products", item.id), {
+        stock: updatedStock,
+      });
+    } else {
+      console.error("No hay stock del producto:", item);
+    }
+  } else {
+    console.error("Stock invalido, o cantidad erronea:", item);
+  }
+});
   
         clearCart();
         Swal.fire({

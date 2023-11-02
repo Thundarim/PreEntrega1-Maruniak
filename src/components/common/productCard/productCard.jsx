@@ -28,10 +28,10 @@ const ProductCard = ({ product }) => {
         <Typography variant="h5" component="div">
           {product.nombre}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="textSecondary">
           Categoria: {product.categoria}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="textPrimary">
           Precio: ${product.precio}
         </Typography>
       </CardContent>
