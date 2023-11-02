@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 
 const ItemDetail = ({ item }) => {
   const { addToCart, getQuantityById } = useContext(CartContext);
-  const [showCounter, setShowCounter] = useState(true);
   const [totalQuantity, setTotalQuantity] = useState(getQuantityById(item.id) || 0);
 
   const handleAddToCart = (quantity) => {
@@ -18,8 +17,10 @@ const ItemDetail = ({ item }) => {
     });
 
     Swal.fire('Añadido al Carrito', `Añadido ${quantity} ${item.nombre}(s) a tu carrito.`, 'success');
-    setShowCounter(false);
   };
+
+  // Check if the item is already in the cart
+  const itemInCart = totalQuantity > 0;
 
   return (
     <div className="item-detail-container">
@@ -31,14 +32,14 @@ const ItemDetail = ({ item }) => {
           <p>Categoría: {item.categoria}</p>
           <p>Precio: ${item.precio}</p>
           <p>Descripción: {item.descripcion}</p>
-          {showCounter ? (
+          {itemInCart ? (
+            <p>Este producto ya está en tu carrito.</p>
+          ) : (
             <CounterContainer
               stock={item.stock}
               addToCart={handleAddToCart}
               product={item}
             />
-          ) : (
-            <p>Producto ya agregado al carrito.</p>
           )}
         </>
       ) : (

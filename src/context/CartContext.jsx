@@ -1,8 +1,11 @@
-import { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
+  // Initialize the quantity state with a default value of 1
+  const [quantity, setQuantity] = useState(1);
+
   // Inicializa el estado del carrito desde localStorage
   const [cart, setCart] = useState(() => {
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -14,20 +17,29 @@ const CartContextProvider = ({ children }) => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
   // Agregar un producto al carrito
-  const addToCart = (product, quantity) => {
-    setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prevCart.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + quantity }
-            : item
-        );
-      } else {
-        return [...prevCart, { ...product, quantity }];
-      }
-    });
+  const addToCart = (product) => {
+    let exist = isInCart(product.id);
+    if (exist) {
+      let newArr = cart.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: product.quantity,
+          };
+        } else {
+          return item;
+        }
+      });
+      setCart(newArr);
+      localStorage.setItem("cart", JSON.stringify(newArr) )
+    } else {
+      setCart([...cart, product]);
+      localStorage.setItem("cart", JSON.stringify([...cart, product]) )
+    }
   };
+  
+  
+  
 
   // Comprobar si un producto con un ID dado está en el carrito
   const isInCart = (id) => cart.some((item) => item.id === id);
@@ -67,6 +79,8 @@ const CartContextProvider = ({ children }) => {
     deleteProductById,
     getTotalPrice,
     getTotalQuantity,
+    quantity, // Add the quantity to the context
+    setQuantity, // Add the function to update the quantity
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

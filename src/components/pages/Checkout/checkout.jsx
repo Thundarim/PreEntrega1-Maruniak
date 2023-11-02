@@ -38,26 +38,34 @@ const Checkout = () => {
       order.comprador.nombre = userData.name;
     }
   
-    const ordersCollection = collection(db, "orders");
+    if (!order.comprador.nombre) {
+      order.comprador.nombre = userData.name;
+    }
   
+    const ordersCollection = collection(db, "orders");
+
     addDoc(ordersCollection, order)
       .then((res) => {
         setOrderId(res.id);
   
         cart.forEach((item) => {
-          const stock = parseInt(item.stock);
-          const quantity = parseInt(item.quantity);
-        
+          const stock = parseFloat(item.stock);
+          const quantity = parseFloat(item.quantity);
+  
           if (!isNaN(stock) && !isNaN(quantity)) {
-            const newStock = stock - quantity;
-            updateDoc(doc(db, "products", item.id), {
-              stock: newStock,
-            }); 
+            const updatedStock = stock - quantity;
+            if (updatedStock >= 0) {
+              updateDoc(doc(db, "products", item.id), {
+                stock: updatedStock,
+              });
+            } else {
+              console.error("Not enough stock for item:", item);
+            }
           } else {
             console.error("Invalid stock or quantity data:", item);
           }
         });
-        
+  
         clearCart();
         Swal.fire({
           icon: "success",
@@ -75,7 +83,6 @@ const Checkout = () => {
         });
       });
   };
-
   
   return (
     <div className="checkout-container">
@@ -118,5 +125,6 @@ const Checkout = () => {
     </div>
   );
 };
+
 
 export default Checkout;
