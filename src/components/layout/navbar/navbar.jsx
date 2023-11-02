@@ -40,7 +40,7 @@ export const Navbar = ({ onCategorySelect }) => {
               </Link>
             ))}
           </ul>
-          <li><CartWidget /></li>
+          <li  style={{ display: 'flex', alignItems: 'center' }}><CartWidget /></li>
         </ul>
       </div>
     </div>
